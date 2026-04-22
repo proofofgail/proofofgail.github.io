@@ -189,6 +189,7 @@ a.inline {
 
 /* Nav */
 .nav {
+    position: relative;
     margin: 0;
 }
 
@@ -198,17 +199,16 @@ a.inline {
     font-size: 13px;
     letter-spacing: 0.05em;
     color: var(--ink);
+    background: transparent;
+    border: 0;
+    padding: 0;
     cursor: pointer;
     user-select: none;
-    list-style: none;
 }
 
-.nav__toggle::-webkit-details-marker {
-    display: none;
-}
-
-.nav__toggle::marker {
-    content: "";
+.nav__toggle:hover,
+.nav__toggle:focus-visible {
+    color: var(--accent);
 }
 
 .nav__list {
@@ -440,10 +440,6 @@ a.inline {
         align-items: center;
     }
 
-    .nav {
-        position: relative;
-    }
-
     .nav__toggle {
         display: inline-block;
     }
@@ -461,7 +457,7 @@ a.inline {
         min-width: 180px;
     }
 
-    .nav[open] .nav__list {
+    .nav__toggle[aria-expanded="true"] + .nav__list {
         display: flex;
     }
 
