@@ -297,38 +297,37 @@ a.inline {
     margin-bottom: 8px;
 }
 
-/* Landing intro */
-.intro {
+/* Landing page */
+.main--landing {
+    padding-top: 140px;
+}
+
+.landing {
     max-width: 680px;
     margin: 0 auto;
-    padding-top: 64px;
 }
 
-.intro__bio {
+.landing__statement {
     font-family: var(--serif);
     font-weight: 400;
-    font-size: 28px;
-    line-height: 1.4;
-    letter-spacing: -0.005em;
+    font-size: 32px;
+    line-height: 1.35;
     color: var(--ink);
-    margin-bottom: 40px;
+    margin: 0;
 }
 
-.intro__cta {
-    font-family: var(--sans);
-    font-size: 14px;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: var(--ink);
+.landing__link {
     display: inline-block;
-    padding-bottom: 2px;
-    border-bottom: 1px solid var(--ink);
+    margin-top: 48px;
+    font-family: var(--sans);
+    font-size: 13px;
+    letter-spacing: 0.05em;
+    color: var(--muted);
 }
 
-.intro__cta:hover,
-.intro__cta:focus-visible {
+.landing__link:hover,
+.landing__link:focus-visible {
     color: var(--accent);
-    border-bottom-color: var(--accent);
 }
 
 /* List page (Work, Writing + Talks) */
@@ -423,6 +422,10 @@ a.inline {
 @media (max-width: 768px) {
     main {
         padding: 56px var(--pad-x-mobile) 72px;
+    }
+
+    .main--landing {
+        padding-top: 64px;
     }
 
     .site-header {
