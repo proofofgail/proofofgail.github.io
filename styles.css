@@ -287,6 +287,35 @@ a.inline {
     margin-bottom: 16px;
 }
 
+/* About page */
+.about-page {
+    max-width: 844px;
+    margin: 0 auto;
+}
+
+.about-layout {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 64px;
+    align-items: start;
+}
+
+.about-portrait {
+    margin: 0;
+}
+
+.portrait {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    background: #d4d8de;
+}
+
+.about-copy {
+    min-width: 0;
+}
+
 /* Prose (About, Contact intro, etc.) */
 .prose > * + * {
     margin-top: 20px;
@@ -463,6 +492,15 @@ a.inline {
 
     h1 {
         font-size: 36px;
+    }
+
+    .about-layout {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .about-portrait {
+        max-width: 300px;
     }
 
     .intro {
