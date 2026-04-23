@@ -189,6 +189,7 @@ a.inline {
 
 /* Nav */
 .nav {
+    position: relative;
     margin: 0;
 }
 
@@ -198,17 +199,16 @@ a.inline {
     font-size: 13px;
     letter-spacing: 0.05em;
     color: var(--ink);
+    background: transparent;
+    border: 0;
+    padding: 0;
     cursor: pointer;
     user-select: none;
-    list-style: none;
 }
 
-.nav__toggle::-webkit-details-marker {
-    display: none;
-}
-
-.nav__toggle::marker {
-    content: "";
+.nav__toggle:hover,
+.nav__toggle:focus-visible {
+    color: var(--accent);
 }
 
 .nav__list {
@@ -287,6 +287,61 @@ a.inline {
     margin-bottom: 16px;
 }
 
+.page-title h1 + .page-title__intro {
+    margin-top: 32px;
+}
+
+.page-title__intro {
+    font-family: var(--sans);
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--muted);
+    max-width: 560px;
+}
+
+.section-heading {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 1.25;
+    color: var(--ink);
+    margin-top: 48px;
+    margin-bottom: 24px;
+}
+
+.section-heading--first {
+    margin-top: 16px;
+}
+
+/* About page */
+.about-page {
+    max-width: 844px;
+    margin: 0 auto;
+}
+
+.about-layout {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 64px;
+    align-items: start;
+}
+
+.about-portrait {
+    margin: 0;
+}
+
+.portrait {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    background: #d4d8de;
+}
+
+.about-copy {
+    min-width: 0;
+}
+
 /* Prose (About, Contact intro, etc.) */
 .prose > * + * {
     margin-top: 20px;
@@ -297,38 +352,37 @@ a.inline {
     margin-bottom: 8px;
 }
 
-/* Landing intro */
-.intro {
+/* Landing page */
+.main--landing {
+    padding-top: 140px;
+}
+
+.landing {
     max-width: 680px;
     margin: 0 auto;
-    padding-top: 64px;
 }
 
-.intro__bio {
+.landing__statement {
     font-family: var(--serif);
     font-weight: 400;
-    font-size: 28px;
-    line-height: 1.4;
-    letter-spacing: -0.005em;
+    font-size: 32px;
+    line-height: 1.35;
     color: var(--ink);
-    margin-bottom: 40px;
+    margin: 0;
 }
 
-.intro__cta {
-    font-family: var(--sans);
-    font-size: 14px;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: var(--ink);
+.landing__link {
     display: inline-block;
-    padding-bottom: 2px;
-    border-bottom: 1px solid var(--ink);
+    margin-top: 48px;
+    font-family: var(--sans);
+    font-size: 13px;
+    letter-spacing: 0.05em;
+    color: var(--muted);
 }
 
-.intro__cta:hover,
-.intro__cta:focus-visible {
+.landing__link:hover,
+.landing__link:focus-visible {
     color: var(--accent);
-    border-bottom-color: var(--accent);
 }
 
 /* List page (Work, Writing + Talks) */
@@ -388,41 +442,46 @@ a.inline {
     transition: var(--transition);
 }
 
-.entry:hover .entry__title,
-.entry:focus-visible .entry__title,
-.entry:hover .entry__arrow,
-.entry:focus-visible .entry__arrow {
+a.entry:hover .entry__title,
+a.entry:focus-visible .entry__title,
+a.entry:hover .entry__arrow,
+a.entry:focus-visible .entry__arrow {
     color: var(--accent);
 }
 
-/* Contact block */
-.contact-block {
-    display: grid;
-    grid-template-columns: 120px 1fr;
-    gap: 16px 32px;
-    margin-top: 40px;
-    padding-top: 32px;
-    border-top: 1px solid var(--rule-soft);
-}
-
-.contact-block dt {
-    font-family: var(--sans);
-    font-size: 13px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--muted);
-}
-
-.contact-block dd {
+/* Contact page */
+.contact-statement {
     font-family: var(--sans);
     font-size: 16px;
+    line-height: 1.7;
     color: var(--ink);
+    max-width: 680px;
+    margin-bottom: 48px;
+}
+
+.contact-details {
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.7;
+    max-width: 680px;
+}
+
+.contact-details p {
+    margin: 0;
+}
+
+.contact-details__label {
+    color: var(--muted);
 }
 
 /* Responsive */
 @media (max-width: 768px) {
     main {
         padding: 56px var(--pad-x-mobile) 72px;
+    }
+
+    .main--landing {
+        padding-top: 64px;
     }
 
     .site-header {
@@ -435,10 +494,6 @@ a.inline {
 
     .site-header__inner {
         align-items: center;
-    }
-
-    .nav {
-        position: relative;
     }
 
     .nav__toggle {
@@ -458,12 +513,21 @@ a.inline {
         min-width: 180px;
     }
 
-    .nav[open] .nav__list {
+    .nav__toggle[aria-expanded="true"] + .nav__list {
         display: flex;
     }
 
     h1 {
         font-size: 36px;
+    }
+
+    .about-layout {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .about-portrait {
+        max-width: 300px;
     }
 
     .intro {
@@ -499,15 +563,6 @@ a.inline {
     .site-footer__inner {
         flex-direction: column;
         gap: 12px;
-    }
-
-    .contact-block {
-        grid-template-columns: 1fr;
-        gap: 4px;
-    }
-
-    .contact-block dd {
-        margin-bottom: 12px;
     }
 }
 

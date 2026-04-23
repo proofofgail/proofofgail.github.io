@@ -9,27 +9,28 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <script src="nav.js" defer></script>
 </head>
 <body>
     <header class="site-header">
         <div class="site-header__inner">
             <a href="index.html" class="wordmark" aria-label="Abigail Miller, home">Abigail Miller</a>
-            <details class="nav">
-                <summary class="nav__toggle" aria-label="Menu">Menu</summary>
-                <ul class="nav__list">
+            <div class="nav">
+                <button type="button" class="nav__toggle" aria-expanded="false" aria-controls="nav-list" aria-label="Menu">Menu</button>
+                <ul class="nav__list" id="nav-list">
                     <li><a class="nav__link" href="about.html">About</a></li>
                     <li><a class="nav__link" href="work.html">Work</a></li>
                     <li><a class="nav__link" href="writing.html">Writing + Talks</a></li>
                     <li><a class="nav__link" href="contact.html">Contact</a></li>
                 </ul>
-            </details>
+            </div>
         </div>
     </header>
 
-    <main>
-        <section class="intro" aria-labelledby="intro-bio">
-            <p id="intro-bio" class="intro__bio">Abigail Miller is a curator, cultural strategist, and producer working with artists and institutions to build long-term cultural partnerships and programs across art and advanced technologies.</p>
-            <a href="contact.html" class="intro__cta">Contact</a>
+    <main class="main--landing">
+        <section class="landing">
+            <p class="landing__statement">Abigail Miller is a curator, cultural strategist, and producer working with artists and institutions to build long-term cultural partnerships and programmes across art, science, and technologies.</p>
+            <a class="landing__link" href="about.html">About &rarr;</a>
         </section>
     </main>
 

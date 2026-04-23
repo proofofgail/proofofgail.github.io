@@ -9,46 +9,36 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <script src="nav.js" defer></script>
 </head>
 <body>
     <header class="site-header">
         <div class="site-header__inner">
             <a href="index.html" class="wordmark" aria-label="Abigail Miller, home">Abigail Miller</a>
-            <details class="nav">
-                <summary class="nav__toggle" aria-label="Menu">Menu</summary>
-                <ul class="nav__list">
+            <div class="nav">
+                <button type="button" class="nav__toggle" aria-expanded="false" aria-controls="nav-list" aria-label="Menu">Menu</button>
+                <ul class="nav__list" id="nav-list">
                     <li><a class="nav__link" href="about.html">About</a></li>
                     <li><a class="nav__link" href="work.html">Work</a></li>
                     <li><a class="nav__link" href="writing.html">Writing + Talks</a></li>
                     <li><a class="nav__link" href="contact.html" aria-current="page">Contact</a></li>
                 </ul>
-            </details>
+            </div>
         </div>
     </header>
 
     <main>
         <article class="page">
             <header class="page-title">
-                <p class="page-title__eyebrow">Contact</p>
-                <h1>Get in touch.</h1>
+                <h1>Contact</h1>
             </header>
 
-            <div class="prose">
-                <p class="lede">[Contact intro copy goes here. One or two sentences on the kinds of enquiries welcomed, with a light indication of response time or scope.]</p>
+            <p class="contact-statement">For curatorial collaborations, partnerships, speaking invitations, and press enquiries.</p>
 
-                <dl class="contact-block">
-                    <dt>Email</dt>
-                    <dd><a class="inline" href="mailto:abigail.kathleen.miller@gmail.com">abigail.kathleen.miller@gmail.com</a></dd>
-
-                    <dt>LinkedIn</dt>
-                    <dd><a class="inline" href="https://www.linkedin.com/in/abigailkmiller/">linkedin.com/in/abigailkmiller</a></dd>
-
-                    <dt>Based in</dt>
-                    <dd>London</dd>
-
-                    <dt>Representation</dt>
-                    <dd>[Agent or management details, if relevant. Otherwise remove.]</dd>
-                </dl>
+            <div class="contact-details">
+                <p><span class="contact-details__label">Email</span>&nbsp;&nbsp;<a href="mailto:abigail.kathleen.miller@gmail.com">abigail.kathleen.miller@gmail.com</a></p>
+                <p><span class="contact-details__label">LinkedIn</span>&nbsp;&nbsp;<a href="https://www.linkedin.com/in/abigailkmiller/">linkedin.com/in/abigailkmiller</a></p>
+                <p><span class="contact-details__label">Location</span>&nbsp;&nbsp;London</p>
             </div>
         </article>
     </main>
