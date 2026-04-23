@@ -449,6 +449,42 @@ a.entry:focus-visible .entry__arrow {
     color: var(--accent);
 }
 
+/* List groups (Work, Writing + Talks) */
+.list-group + .list-group {
+    margin-top: 40px;
+}
+
+.list-group__year {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.3;
+    color: var(--ink);
+    margin-bottom: 8px;
+}
+
+.list-group__items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.list-group__items li {
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--ink);
+}
+
+.list-group__items a {
+    color: var(--ink);
+}
+
+.list-group__items a:hover,
+.list-group__items a:focus-visible {
+    color: var(--accent);
+}
+
 /* Contact page */
 .contact-statement {
     font-family: var(--sans);
