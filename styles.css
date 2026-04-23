@@ -287,6 +287,32 @@ a.inline {
     margin-bottom: 16px;
 }
 
+.page-title h1 + .page-title__intro {
+    margin-top: 32px;
+}
+
+.page-title__intro {
+    font-family: var(--sans);
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--muted);
+    max-width: 560px;
+}
+
+.section-heading {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 1.25;
+    color: var(--ink);
+    margin-top: 48px;
+    margin-bottom: 24px;
+}
+
+.section-heading--first {
+    margin-top: 16px;
+}
+
 /* About page */
 .about-page {
     max-width: 844px;
@@ -416,10 +442,10 @@ a.inline {
     transition: var(--transition);
 }
 
-.entry:hover .entry__title,
-.entry:focus-visible .entry__title,
-.entry:hover .entry__arrow,
-.entry:focus-visible .entry__arrow {
+a.entry:hover .entry__title,
+a.entry:focus-visible .entry__title,
+a.entry:hover .entry__arrow,
+a.entry:focus-visible .entry__arrow {
     color: var(--accent);
 }
 
